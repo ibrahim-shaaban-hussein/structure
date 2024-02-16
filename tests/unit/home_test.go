@@ -2,42 +2,23 @@ package tests
 
 import (
     "testing"
-    "github.com/your-username/structure/pkg/database/mongodb"
+    "github.com/ibrahim-shaaban-hussein/structure/pkg/database/mongodb"
 )
 
-// SetupMockDatabase initializes a mock database connection for testing
-func SetupMockDatabase() (*MockDBClient, error) {
-    // Create a new instance of the mock database client
-    db := &MockDBClient{}
+func TestSomeFunctionality(t *testing.T) {
+    // Test setup
+    // For example, initialize mock objects, set up test data, etc.
 
-    // Connect to the mock database
-    if err := db.Connect(); err != nil {
-        return nil, err
+    // Create a mock database client
+    mockDB := &mongodb.MockDBClient{}
+
+    // Call the function or method being tested
+    result := mockDB.SomeFunctionToTest()
+
+    // Check the result or behavior
+    expected := "expected result"
+    if result != expected {
+        t.Errorf("Test failed: expected %s, got %s", expected, result)
     }
-
-    // Return the initialized mock database client
-    return db, nil
-}
-
-// TeardownMockDatabase cleans up the mock database connection
-func TeardownMockDatabase(db *MockDBClient) {
-    // Disconnect from the mock database
-    _ = db.Disconnect()
-}
-
-func TestHomeHandler(t *testing.T) {
-    // Setup test environment
-    mockDB, err := SetupMockDatabase()
-    if err != nil {
-        t.Fatalf("Error setting up mock database: %v", err)
-    }
-    defer TeardownMockDatabase(mockDB) // Cleanup after test execution
-
-    // Insert test data into the mock database
-    if err := mockDB.InsertTestData(); err != nil {
-        t.Fatalf("Error inserting test data: %v", err)
-    }
-
-    // Run tests...
 }
 

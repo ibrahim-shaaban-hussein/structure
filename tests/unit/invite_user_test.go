@@ -10,7 +10,6 @@ import (
 	"testing"
 
 	"github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers"
-	"github.com/ibrahim-shaaban-hussein/structure/pkg/api/middleware"
 )
 
 func TestInviteUserHandler(t *testing.T) {

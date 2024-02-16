@@ -1,0 +1,26 @@
+# app-config.yaml
+
+# Server configuration
+server:
+  port: 8080            # Port on which the server will listen
+  mode: debug           # Server mode: debug, release, test, etc.
+
+# Database configuration
+database:
+  host: mongo           # Docker container name for MongoDB
+  port: 27017           # Database port
+  name: my_database     # Database name
+  username: user        # Database username
+  password: password    # Database password
+
+# Redis configuration
+redis:
+  host: redis           # Docker container name for Redis
+  port: 6379            # Redis port
+
+# Application endpoints
+endpoints:
+  base_url: http://localhost:8080  # Base URL for accessing the API
+  organization: /organization       # Endpoint for organization-related operations
+  invite_user: /organization/{organization_id}/invite  # Endpoint for inviting users to organizations
+
