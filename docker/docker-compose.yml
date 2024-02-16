@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  myservice:
+    image: rg117/myimage:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - ENV_VAR=value
+
