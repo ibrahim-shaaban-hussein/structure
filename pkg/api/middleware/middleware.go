@@ -1,5 +1,3 @@
-// middleware.go
-
 package middleware
 
 import (

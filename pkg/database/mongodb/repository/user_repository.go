@@ -1,0 +1,18 @@
+package repository
+
+import (
+    "context"
+
+    "go.mongodb.org/mongo-driver/mongo"
+)
+
+type UserRepository struct {
+    collection *mongo.Collection
+}
+
+func NewUserRepository(collection *mongo.Collection) *UserRepository {
+    return &UserRepository{collection}
+}
+
+// Implement CRUD operations for users
+

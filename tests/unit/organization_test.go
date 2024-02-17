@@ -1,75 +1,53 @@
-package tests
+// organization_test.go
+
+package unit
 
 import (
-    "fmt" // Import the fmt package
-    "net/http"
-    "strings"
-    "time"
+	"net/http"
+	"net/http/httptest"
+	"testing"
 
-    "github.com/dgrijalva/jwt-go" // Import the JWT library
-    "github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin"
+	"github.com/ibrahim-shaaban-hussein/structure/tests" // Import the tests package
 )
 
-// Define a secret key for signing and verifying tokens
-var secretKey = []byte("your-secret-key")
+// TestOrganizationHandler is a unit test for the organization handler
+func TestOrganizationHandler(t *testing.T) {
+	// Create a new Gin router
+	router := gin.New()
 
-// AuthMiddleware is a middleware function to authenticate requests using Bearer Tokens
-func AuthMiddleware() gin.HandlerFunc {
-    // Define the middleware function that Gin will execute for each request
-    return func(c *gin.Context) {
-        // Get the Authorization header from the request
-        authHeader := c.GetHeader("Authorization")
+	// Add the AuthMiddleware to the router
+	router.Use(tests.AuthMiddleware())
 
-        // Check if the Authorization header is missing or doesn't start with "Bearer "
-        if authHeader == "" || !strings.HasPrefix(authHeader, "Bearer ") {
-            // If the header is missing or incorrect, return a 401 Unauthorized response
-            c.JSON(http.StatusUnauthorized, gin.H{"error": "Unauthorized"})
-            c.Abort() // Stop processing the request further
-            return
-        }
+	// Define a handler function for the organization endpoint
+	router.GET("/organization", func(c *gin.Context) {
+		// Return a dummy response
+		c.JSON(http.StatusOK, gin.H{"message": "Organization endpoint"})
+	})
 
-        // Extract the token from the Authorization header
-        tokenString := authHeader[len("Bearer "):]
+	// Create a new HTTP request to test the organization endpoint
+	req, err := http.NewRequest("GET", "/organization", nil)
+	if err != nil {
+		t.Fatalf("failed to create request: %v", err)
+	}
 
-        // Parse the token string into a JWT token object
-        token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
-            // Ensure the token signing method is HMAC and the signing key matches
-            if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
-                return nil, fmt.Errorf("unexpected signing method: %v", token.Header["alg"])
-            }
-            return secretKey, nil
-        })
-        if err != nil {
-            // If there's an error parsing the token, return a 401 Unauthorized response
-            c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid token"})
-            c.Abort() // Stop processing the request further
-            return
-        }
+	// Create a response recorder to capture the response
+	rr := httptest.NewRecorder()
 
-        // Check if the token is valid
-        if !token.Valid {
-            // If the token is invalid, return a 401 Unauthorized response
-            c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid token"})
-            c.Abort() // Stop processing the request further
-            return
-        }
+	// Dispatch the request to the router
+	router.ServeHTTP(rr, req)
 
-        // Check token expiration
-        if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
-            // Extract and validate the "exp" claim to check token expiration
-            expirationTime := time.Unix(int64(claims["exp"].(float64)), 0)
-            if time.Now().After(expirationTime) {
-                // If the token is expired, return a 401 Unauthorized response
-                c.JSON(http.StatusUnauthorized, gin.H{"error": "Token expired"})
-                c.Abort() // Stop processing the request further
-                return
-            }
-        }
+	// Check if the status code is OK (200)
+	if status := rr.Code; status != http.StatusOK {
+		t.Errorf("handler returned wrong status code: got %v want %v",
+			status, http.StatusOK)
+	}
 
-        // Proceed to the next middleware or handler
-        c.Next()
-    }
+	// Check the response body
+	expected := `{"message":"Organization endpoint"}`
+	if rr.Body.String() != expected {
+		t.Errorf("handler returned unexpected body: got %v want %v",
+			rr.Body.String(), expected)
+	}
 }
-
-// Write your test functions here...
 
