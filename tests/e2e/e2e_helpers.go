@@ -5,6 +5,8 @@ package tests
 import (
     "encoding/json"
     "net/http"
+    "bytes"
+
 )
 
 // SendHTTPRequest sends an HTTP request and returns the response.

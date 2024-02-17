@@ -1,9 +1,19 @@
 // user_handler.go
+
 package handlers
 
-// GetUserHandler retrieves user data using UserService.
-// This is a duplicate declaration and should be removed from here.
-// func (h *UserHandler) GetUserHandler(userID string) (User, error) {
-//     return h.UserService.GetUser(userID)
-// }
+// UserService defines the interface for user-related operations.
+type UserService interface {
+    GetUser(userID string) (User, error)
+}
+
+// UserHandler depends on UserService interface.
+type UserHandler struct {
+    UserService UserService
+}
+
+// GetUser retrieves user data using UserService.
+func (h *UserHandler) GetUser(userID string) (User, error) {
+    return h.UserService.GetUser(userID)
+}
 

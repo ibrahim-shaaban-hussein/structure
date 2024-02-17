@@ -1,9 +1,12 @@
-package repository
+// pkg/api/handlers/organization_handler.go
+
+package handlers
 
 import (
     "context"
 
     "go.mongodb.org/mongo-driver/mongo"
+    "github.com/yourusername/yourproject/pkg/shared"
 )
 
 type OrganizationRepository struct {
@@ -15,4 +18,9 @@ func NewOrganizationRepository(collection *mongo.Collection) *OrganizationReposi
 }
 
 // Implement CRUD operations for organizations
+
+// Use the shared logging function
+func SomeFunction() {
+    shared.LogError(someError)
+}
 
