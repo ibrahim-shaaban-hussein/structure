@@ -1,12 +1,10 @@
 // e2e_helpers.go
 
-package helpers
+package tests
 
 import (
     "encoding/json"
     "net/http"
-    "github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers"
-    "github.com/ibrahim-shaaban-hussein/structure/tests/e2e"
 )
 
 // SendHTTPRequest sends an HTTP request and returns the response.

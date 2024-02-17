@@ -1,6 +1,6 @@
 // e2e_handlers_test.go
 
-package handlers
+package tests
 
 import (
     "bytes"

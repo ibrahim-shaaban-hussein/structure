@@ -3,10 +3,7 @@
 package routes
 
 import (
-	"your-project/handlers"
-
 	"github.com/gin-gonic/gin"
-	"github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers"
 )
 
 // SetupSignupRoutes registers routes related to user signup

@@ -1,9 +1,9 @@
 package middleware
 
 import (
-    "github.com/gin-gonic/gin"
-    "net/http"
     "strings"
+    "net/http"
+    "github.com/gin-gonic/gin"
 )
 
 // AuthMiddleware is a middleware function to authenticate requests using Bearer Tokens

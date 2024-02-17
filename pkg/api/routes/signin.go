@@ -3,10 +3,6 @@
 package routes
 
 import (
-	"IDEANEST/handlers"
-
-	"github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers"
-
 	"github.com/gin-gonic/gin"
 )
 

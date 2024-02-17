@@ -1,12 +1,13 @@
 package handlers
 
 import (
-	"fmt"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 // HomeHandler handles requests to the home page
-func HomeHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, IDEANEST!, by Ibrahim")
+func HomeHandler(c *gin.Context) {
+	c.String(http.StatusOK, "Hello, IDEANEST!, by Ibrahim")
 }
 
