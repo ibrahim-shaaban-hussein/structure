@@ -9,7 +9,7 @@ import (
 
     "github.com/dgrijalva/jwt-go"
     "github.com/gin-gonic/gin"
-    "github.com/ibrahim-shaaban-hussein/structure/handlers"
+    "github.com/ibrahim-shaaban-hussein/structure/pki/api/handlers"
 )
 
 // Define a secret key for signing and verifying tokens
