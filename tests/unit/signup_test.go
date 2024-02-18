@@ -7,7 +7,7 @@ import (
     "net/http/httptest"
     "testing"
 
-    "github.com/username/project/handlers"
+    "github.com/ibrahim-shaaban-hussein/structure/pki/api/handlers"
 )
 
 func TestSignupHandler(t *testing.T) {

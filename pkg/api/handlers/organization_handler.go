@@ -5,7 +5,7 @@ package handlers
 import (
     "context"
     "go.mongodb.org/mongo-driver/mongo"
-    "github.com/yourusername/yourproject/pkg/shared"
+    "github.com/ibrahim-shaaban-hussein/structure/pkg/shared"
 )
 
 type OrganizationRepository struct {

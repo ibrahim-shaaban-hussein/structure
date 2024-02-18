@@ -7,7 +7,7 @@ import (
     "strings"
     "testing"
 
-i   "github.com/username/project/handlers"
+    "github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers"
 )
 
 func TestInviteUserHandler(t *testing.T) {
