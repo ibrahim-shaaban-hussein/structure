@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers"
+        "go.mongodb.org/mongo-driver/mongo"
 )
 
 func main() {
