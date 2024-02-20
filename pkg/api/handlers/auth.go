@@ -1,7 +1,7 @@
 package handlers
 
 import (
-    "yourmodule/pkg/api/middleware" // Adjust the import path as per your project structure
+    "github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers" // Adjust the import path as per your project structure
 )
 
 // isValidToken is a function to validate the token
