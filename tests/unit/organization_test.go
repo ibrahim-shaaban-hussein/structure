@@ -6,7 +6,7 @@ import (
         "testing"
 
         "github.com/gin-gonic/gin"
-	"github.com/ibrahims.hussein/structure/pkg/api/middleware/auth"
+	"github.com/ibrahims.hussein/structure/pkg/api/middleware/handlers/auth"
 )
 
 // TestOrganizationHandler is a unit test for the organization handler
