@@ -1,4 +1,4 @@
-apackage handlers
+package handlers
 
 import (
     "yourmodule/pkg/api/middleware" // Adjust the import path as per your project structure
