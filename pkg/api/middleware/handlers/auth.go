@@ -1,4 +1,4 @@
-package middleware
+package handlers
 
 // isValidToken is a function to validate the token
 func isValidToken(token string) bool {
