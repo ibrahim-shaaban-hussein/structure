@@ -1,9 +1,5 @@
 package handlers
 
-import (
-    "github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers" // Adjust the import path as per your project structure
-)
-
 // isValidToken is a function to validate the token
 func isValidToken(token string) bool {
     // Example token validation logic (replace with your actual implementation)
