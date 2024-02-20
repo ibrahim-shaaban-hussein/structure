@@ -45,4 +45,5 @@ require (
     github.com/ibrahim-shaaban-hussein/structure/pkg/api/middleware v1.0.0
     github.com/ibrahim-shaaban-hussein/structure/pkg/shares v1.0.0
     github.com/ibrahim-shaaban-hussein/structure/tests v1.0.0
+    github.com/ibrahim-shaaban-hussein/structure v1.0.0
 )
