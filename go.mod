@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gin-gonic/gin v1.9.1
-	github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers v0.0.0-20240220160127-d958fb708390
+	github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers v0.0.0-20240220174627-38e642461a0c
 	go.mongodb.org/mongo-driver v1.14.0
 )
 

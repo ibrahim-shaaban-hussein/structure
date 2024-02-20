@@ -1,47 +1,46 @@
 package tests
 
 import (
-    "net/http"
-    "net/http/httptest"
-    "strings"
-    "testing"
+	"net/http"
+	"net/http/httptest"
+	"strings"
+	"testing"
 
-    "github.com/gin-gonic/gin"
-    "github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers"
+	"github.com/gin-gonic/gin"
+	"github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers"
 )
 
 func TestRefreshTokenHandler(t *testing.T) {
-    // Create a new Gin router
-    r := gin.New()
+	// Create a new Gin router
+	r := gin.New()
 
-    // Create an instance of the OrganizationHandler
-    orgHandler := &handlers.OrganizationHandler{}
+	// Create an instance of the OrganizationHandler
+	orgHandler := &handlers.OrganizationHandler{}
 
-    // Route for the refresh token handler
-    r.POST("/refresh-token", orgHandler.RefreshTokenHandler)
+	// Route for the refresh token handler
+	r.POST("/refresh-token", orgHandler.RefreshTokenHandler)
 
-    // Create a test request with a JSON body
-    reqBody := `{"refresh_token": "dummy-refresh-token"}`
-    req, err := http.NewRequest("POST", "/refresh-token", strings.NewReader(reqBody))
-    if err != nil {
-        t.Fatalf("Failed to create request: %v", err)
-    }
+	// Create a test request with a JSON body
+	reqBody := `{"refresh_token": "dummy-refresh-token"}`
+	req, err := http.NewRequest("POST", "/refresh-token", strings.NewReader(reqBody))
+	if err != nil {
+		t.Fatalf("Failed to create request: %v", err)
+	}
 
-    // Create a response recorder to record the response
-    w := httptest.NewRecorder()
+	// Create a response recorder to record the response
+	w := httptest.NewRecorder()
 
-    // Serve the request to the Gin router
-    r.ServeHTTP(w, req)
+	// Serve the request to the Gin router
+	r.ServeHTTP(w, req)
 
-    // Check the status code
-    if w.Code != http.StatusOK {
-        t.Errorf("Expected status code %d, got %d", http.StatusOK, w.Code)
-    }
+	// Check the status code
+	if w.Code != http.StatusOK {
+		t.Errorf("Expected status code %d, got %d", http.StatusOK, w.Code)
+	}
 
-    // Check the response body
-    expectedResponseBody := `{"message":"Token refreshed successfully","access_token":"dummy-access-token","refresh_token":"dummy-refresh-token"}`
-    if w.Body.String() != expectedResponseBody {
-        t.Errorf("Unexpected response body: got %s, want %s", w.Body.String(), expectedResponseBody)
-    }
+	// Check the response body
+	expectedResponseBody := `{"message":"Token refreshed successfully","access_token":"dummy-access-token","refresh_token":"dummy-refresh-token"}`
+	if w.Body.String() != expectedResponseBody {
+		t.Errorf("Unexpected response body: got %s, want %s", w.Body.String(), expectedResponseBody)
+	}
 }
-
