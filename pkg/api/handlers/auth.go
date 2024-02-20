@@ -1,4 +1,8 @@
-package handlers
+apackage handlers
+
+import (
+    "yourmodule/pkg/api/middleware" // Adjust the import path as per your project structure
+)
 
 // isValidToken is a function to validate the token
 func isValidToken(token string) bool {
