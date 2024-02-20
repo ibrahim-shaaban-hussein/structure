@@ -1,4 +1,4 @@
-package main
+package repository
 
 import (
     "context"
@@ -8,7 +8,7 @@ import (
     "go.mongodb.org/mongo-driver/mongo/options"
 )
 
-func main() {
+func ConnectToDB() {
     // Set client options
     clientOptions := options.Client().ApplyURI("mongodb://localhost:27017")
 
@@ -24,28 +24,6 @@ func main() {
         log.Fatal(err)
     }
 
-    // Database and collection names
-    dbName := "mydatabase"
-    collectionName := "mycollection"
-
-    // Create a new database
-    db := client.Database(dbName)
-
-    // Create a new collection
-    collection := db.Collection(collectionName)
-
-    // You can now perform operations on the collection, such as inserting documents
-    // For example:
-    // _, err = collection.InsertOne(context.Background(), bson.M{"name": "John Doe", "age": 30})
-    // if err != nil {
-    //     log.Fatal(err)
-    // }
-
-    // Close the connection when done
-    err = client.Disconnect(context.Background())
-    if err != nil {
-        log.Fatal(err)
-    }
-    log.Println("Connection closed")
+    log.Println("Connected to MongoDB")
 }
 

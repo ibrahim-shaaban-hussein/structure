@@ -7,7 +7,7 @@ import (
     "strings"
     "testing"
 
-    "github.com/ibrahim-shaaban-hussein/structure/pki/api/handlers"
+    "github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers"
 )
 
 func TestSigninHandler(t *testing.T) {

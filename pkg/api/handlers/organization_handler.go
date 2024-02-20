@@ -3,7 +3,6 @@
 package handlers
 
 import (
-    "context"
     "go.mongodb.org/mongo-driver/mongo"
     "github.com/ibrahim-shaaban-hussein/structure/pkg/shared"
 )

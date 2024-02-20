@@ -1,14 +1,8 @@
-// user_handler.go
-
 package handlers
 
-// UserService defines the interface for user-related operations.
-type UserService interface {
-    GetUser(userID string) (User, error)
-}
-
-// UserHandler depends on UserService interface.
+// UserHandler is responsible for handling user-related operations.
 type UserHandler struct {
+    // UserService interface is not redeclared here
     UserService UserService
 }
 
