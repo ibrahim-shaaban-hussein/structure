@@ -1,15 +1,17 @@
 package tests
 
 import (
-    "fmt"
-    "net/http"
-    "strings"
-    "testing"
-    "time"
+	"fmt"
+	"github.com/dgrijalva/jwt-go/v4"
+	"github.com/lestrrat-go/jwx/jwt"
+	"net/http"
+	"strings"
+	"testing"
+	"time"
 
-    "github.com/dgrijalva/jwt-go"
-    "github.com/gin-gonic/gin"
-    "github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers"
+	"github.com/dgrijalva/jwt-go"
+	"github.com/gin-gonic/gin"
+	"github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers"
 )
 
 // Define a secret key for signing and verifying tokens
