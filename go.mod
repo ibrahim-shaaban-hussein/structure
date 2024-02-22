@@ -6,7 +6,7 @@ require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/dgrijalva/jwt-go/v4 v4.0.0-preview1
 	github.com/gin-gonic/gin v1.9.1
-	github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers v0.0.0-20240221074708-6f383b8b6dd0
+	github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers v0.0.0-20240221075231-f392f96d4b61
 	github.com/lestrrat-go/jwx v1.2.28
 	go.mongodb.org/mongo-driver v1.14.0
 )

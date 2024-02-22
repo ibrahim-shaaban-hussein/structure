@@ -3,7 +3,6 @@ package tests
 import (
 	"fmt"
 	"github.com/dgrijalva/jwt-go/v4"
-	"github.com/lestrrat-go/jwx/jwt"
 	"net/http"
 	"strings"
 	"testing"

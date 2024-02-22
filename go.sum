@@ -35,8 +35,8 @@ github.com/golang/snappy v0.0.1/go.mod h1:/XxbfmMg8lxefKM7IXC3fBNl/7bRcc72aCRzEW
 github.com/google/go-cmp v0.5.5 h1:Khx7svrCpmxxtHBq5j2mp/xVjsi8hQMfNLvJFAlrGgU=
 github.com/google/go-cmp v0.5.5/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/gofuzz v1.0.0/go.mod h1:dBl0BpW6vV/+mYPU4Po3pmUjxk6FQPldtuIdl/M65Eg=
-github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers v0.0.0-20240221074708-6f383b8b6dd0 h1:6f2ieOgPxSa45RHpsCt4tALp3llz+dQy4N9rBXFHaNE=
-github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers v0.0.0-20240221074708-6f383b8b6dd0/go.mod h1:n16T5Zw2/B0fAi1M2mHR+H9qjkTJ/4GdPiODh1Z+tII=
+github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers v0.0.0-20240221075231-f392f96d4b61 h1:2pOFRnniYx5Jrl7dOvymBT5Nam1FZQppJUMEUTbNaD4=
+github.com/ibrahim-shaaban-hussein/structure/pkg/api/handlers v0.0.0-20240221075231-f392f96d4b61/go.mod h1:n16T5Zw2/B0fAi1M2mHR+H9qjkTJ/4GdPiODh1Z+tII=
 github.com/ibrahim-shaaban-hussein/structure/pkg/shared v0.0.0-20240221073238-1358fff76a35 h1:DJWG3TH8vRDh55Nugphfed0/cHs+U/S25o8Pt4Tycls=
 github.com/ibrahim-shaaban-hussein/structure/pkg/shared v0.0.0-20240221073238-1358fff76a35/go.mod h1:3gZapfEYWjuYdAUZRRmIo8rnjZa1PxVOozsBE9wsvd4=
 github.com/json-iterator/go v1.1.12 h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnrnM=
